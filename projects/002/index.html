@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personalized Image Page</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            position: relative;
+            display: inline-block;
+            margin-top: 50px;
+        }
+        img {
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+        }
+        .text-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.6);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Personalized Page</h1>
+    
+    <script>
+        const people = {
+            "Pallavi Ajith": "https://www.example.com/image1.jpg",
+            "John Doe": "https://www.example.com/image2.jpg",
+            "Jane Smith": "https://www.example.com/image3.jpg",
+            "Hima Binth Habeeb": "https://www.example.com/image4.jpg"
+        };
+        
+        const personName = "Hima Binth Habeeb"; // Change dynamically as needed
+        const imageUrl = people[personName] || "https://www.w3schools.com/html/img_chania.jpg";
+    </script>
+    
+    <div class="container">
+        <img id="personImage" src="" alt="Personalized Image">
+        <div class="text-overlay" id="personName"></div>
+    </div>
+    
+    <script>
+        document.getElementById("personImage").src = imageUrl;
+        document.getElementById("personName").textContent = personName;
+    </script>
+</body>
+</html>
